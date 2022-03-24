@@ -8,6 +8,7 @@
 	<version>0.0.26</version>
 	<licence>agpl</licence>
 	<author mail="i@actom.me" homepage="https://actom.me">Jingtao Yan</author>
+  <author>Built by VTS</author>
 	<namespace>Files_MindMap</namespace>
 	<category>files</category>
 	<category>office</category>

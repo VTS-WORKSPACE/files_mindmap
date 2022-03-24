@@ -9,9 +9,7 @@ package_name=$(app_name)
 cert_dir=$(CURDIR)/../../key
 version+=0.0.26
 
-all: appstore
-
-release: appstore create-tag
+all: release
 
 create-tag:
 	git tag -s -a v$(version) -m "Tagging the $(version) release."
@@ -48,3 +46,6 @@ appstore: clean
 		echo "Signing package…"; \
 		openssl dgst -sha512 -sign $(cert_dir)/$(app_name).key $(build_dir)/$(app_name)-$(version).tar.gz | openssl base64; \
 	fi
+
+release:
+	zip -r release.zip . -x "node_modules/*" "tests/*" ".github/*" ".git/*"

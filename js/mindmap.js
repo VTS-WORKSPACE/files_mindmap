@@ -178,9 +178,12 @@ var FilesMindMap = {
 	
 	
 			$.ajax({
-				type: 'PUT',
+				type: 'POST',
 				url: url,
-				data: putObject
+				data: putObject,
+        headers: {
+          'Target-Request-Method': 'PUT'
+        },
 			}).done(function(data){
 				// update modification time
 				try {
